@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Wealth AI Design System - Professional Finance Dashboard */
+
+@layer base {
+  :root {
+    /* Base Colors - Calm Finance Palette */
+    --background: 210 20% 98%;       /* Very light blue-gray */
+    --foreground: 222 84% 5%;        /* Deep navy text */
+
+    /* Card System */
+    --card: 0 0% 100%;               /* Pure white cards */
+    --card-foreground: 222 84% 5%;   /* Deep navy text */
+
+    /* Interactive Elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+
+    /* Professional Finance Brand Colors */
+    --primary: 222 84% 15%;          /* Deep Navy Blue - trust & stability */
+    --primary-foreground: 0 0% 100%; /* White text on navy */
+    --primary-hover: 222 84% 20%;    /* Slightly lighter navy on hover */
+
+    /* Growth/Success Colors */  
+    --secondary: 158 64% 45%;        /* Professional Teal/Green - growth */
+    --secondary-foreground: 0 0% 100%; 
+    --secondary-hover: 158 64% 40%;
+
+    /* Neutral Grays - Calm and professional */
+    --muted: 210 40% 96%;            /* Very light gray backgrounds */
+    --muted-foreground: 215 16% 47%; /* Medium gray text */
+
+    --accent: 45 100% 88%;           /* Soft gold/cream - wealth accent */
+    --accent-foreground: 222 84% 5%; /* Navy text on gold */
+
+    /* Status Colors */
+    --destructive: 0 72% 51%;        /* Red for errors */
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 45 93% 58%;           /* Soft gold for warnings */
+    --warning-foreground: 222 84% 5%; /* Navy text on gold */
+
+    --success: 158 64% 45%;          /* Teal green for success */
+    --success-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 94% 20%;
+
+    /* Professional Finance Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(222 84% 15%), hsl(222 84% 25%));
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 45%), hsl(158 64% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 84% 15%) 0%, hsl(222 84% 20%) 50%, hsl(158 64% 45%) 100%);
+    --gradient-wealth: linear-gradient(135deg, hsl(45 100% 88%) 0%, hsl(45 93% 58%) 100%);
+
+    /* Professional Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(222 84% 15% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(222 84% 15% / 0.12);
+    --shadow-strong: 0 8px 32px -8px hsl(222 84% 15% / 0.16);
+    --shadow-wealth: 0 4px 20px -4px hsl(45 93% 58% / 0.2);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+  }
+
+  .dark {
+    /* Dark mode colors for finance dashboard */
+    --background: 213 94% 8%;
+    --foreground: 0 0% 95%;
+    --card: 213 94% 12%;
+    --card-foreground: 0 0% 95%;
+    --primary: 213 94% 85%;
+    --primary-foreground: 213 94% 8%;
+    --secondary: 142 71% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 213 50% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 213 50% 25%;
+    --accent-foreground: 0 0% 90%;
+    --border: 213 50% 25%;
+    --input: 213 50% 25%;
+    --ring: 213 94% 85%;
+    --sidebar-background: 213 94% 12%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 213 94% 85%;
+    --sidebar-primary-foreground: 213 94% 8%;
+    --sidebar-accent: 213 50% 25%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 213 50% 25%;
+    --sidebar-ring: 213 94% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer components {
+  /* Chat Message Bubbles */
+  .chat-message-user {
+    @apply bg-primary text-primary-foreground rounded-2xl rounded-br-sm px-4 py-3 max-w-[80%] ml-auto;
+  }
+
+  .chat-message-ai {
+    @apply bg-card border border-border rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%] shadow-soft;
+  }
+
+  /* Financial Cards */
+  .finance-card {
+    @apply bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+
+  .finance-card-hover {
+    @apply finance-card hover:border-primary/20 hover:-translate-y-1;
+  }
+
+  /* Professional Disclaimer */
+  .disclaimer-card {
+    @apply bg-muted/30 border border-warning/20 rounded-lg p-4 text-sm text-muted-foreground;
+  }
+  
+  /* Financial data display */
+  .financial-metric {
+    @apply bg-card border border-border rounded-lg p-4 text-center hover:shadow-medium transition-all duration-200;
+  }
+  
+  /* Voice assistant styles */
+  .voice-active {
+    @apply animate-pulse ring-2 ring-primary/20;
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-wealth {
+    background: var(--gradient-wealth);
+  }
+  
+  /* Wealth accent utilities */
+  .shadow-wealth {
+    box-shadow: var(--shadow-wealth);
+  }
+  
+  /* Financial card animations */
+  .card-hover-lift {
+    @apply hover:-translate-y-1 hover:shadow-strong transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
